@@ -2,19 +2,23 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class staff extends Authenticatable
 {
-    
+    use Notifiable;
 
-    protected $table = 'staff';
     protected $guard = 'staff';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'staffname', 'email','workshift', 'password',
+        'staffname', 'email', 'password', 'workshift',
     ];
 
     /**
@@ -25,4 +29,9 @@ class staff extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+   /* public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new AdminResetPasswordNotification($token));
+    }*/
 }

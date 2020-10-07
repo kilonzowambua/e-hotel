@@ -1,13 +1,9 @@
 <?php
 
 namespace App\Exceptions;
+
 use Exception;
-use Request;
-use Illuminate\Auth\AuthenticationException;
-use Response;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-
-
 
 class Handler extends ExceptionHandler
 {
@@ -16,14 +12,6 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
-    protected function unauthenticated($request,AuthenticationException $exception){
-        if ($request->expectsJson()) {
-            return response()->json(['error'=>'Unauthenticated.'],401);
-        }
-     if ($request->is('staff') ||$request->is('staff/*')) {
-            return redirect()->guest('staff.login');
-        }   
-    }
     protected $dontReport = [
         //
     ];

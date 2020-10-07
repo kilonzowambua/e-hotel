@@ -42,7 +42,7 @@
                   <img src="{{url('adminasset/images/icon/logo.png') }}" alt="E-hotel">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back staff!</h1>
                   </div>
-                  <form class="user" method='post' action ="{{url('/stafflogin')}}">
+                  <form class="" method='post' action ="{{url('/stafflogin')}}">
                   @csrf
                   <div class="form-group row">
                             <label for="email" class="col-md-5 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

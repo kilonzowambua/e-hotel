@@ -160,10 +160,10 @@
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
-           
+            Auth::guard('api')->id()
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Your email: {{Auth:User->staffname}}</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Your email:<?php guest::guard('staff')->user()->staffid;?></span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
@@ -301,52 +301,7 @@
                   <h6 class="m-0 font-weight-bold text-primary">Work overview</h6>
                 </div>
                 <div class="card-body">
-                <?PHP
-                  //work remain
-               
-               
-               if($remainyesterday == 100 )
-               {
-                  echo"
-                  <h4 class='small font-weight-bold'>Remaining order<span class='float-right'>$remainyesterday%</span></h4>
-                  <div class='progress'>
-                    <div class ='progress-bar bg-success' role='progressbar' style='width:100%' aria-valuenow='$remainyesterday' aria-valuemin='0' aria-valuemax='100'></div>"; 
-                }elseif($remainyesterday<=90 && $remainyesterday>=80)
-                {
-                  echo"
-                  <h4 class='small font-weight-bold'>Remaining order<span class='float-right'>$remainyesterday%</span></h4>
-                  <div class='progress'>
-                    <div class ='progress-bar bg-success' role='progressbar' style='width:90%' aria-valuenow='$remainyesterday aria-valuemin='0' aria-valuemax='100'></div>";
-                }elseif($remainyesterday<=80 && $remainyesterday>=60)
-                {
-                  echo"
-                  <h4 class='small font-weight-bold'>Remaining order<span class='float-right'>$remainyesterday%</span></h4>
-                  <div class='progress'>
-                    <div class ='progress-bar bg-success' role='progressbar' style='width:80%' aria-valuenow='$remainyesterday' aria-valuemin='0' aria-valuemax='100'></div>";
-                }
-                elseif($remainyesterday<=60 && $remainyesterday>=40)
-                {
-                  echo" <h4 class='small font-weight-bold'>Remaining order<span class='float-right'>$remainyesterday%</span></h4>
-                  <div class='progress mb-4'>
-                    <div class='progress-bar' role='progressbar' style='width: $remainyesterday%' aria-valuenow='$remainyesterday' aria-valuemin='0' aria-valuemax='100'></div>
-                  </div>";
-                }
-                elseif($remainyesterday<=40 && $remainyesterday>=20)
-                {
-                  echo"  <h4 class='small font-weight-bold'>Remaining order <span class='float-right'>$remainyesterday%</span></h4>
-                  <div class='progress mb-4'>
-                    <div class='progress-bar bg-warning' role='progressbar' style='width: $remainyesterday%' aria-valuenow='$remainyesterday' aria-valuemin='0' aria-valuemax='100'></div>
-                  </div>";
-                }
-                else
-                {
-                  echo"  <h4 class='small font-weight-bold'>Remaining order <span class='float-right'>$remainyesterday%</span></h4>
-                  <div class='progress mb-4'>
-                    <div class='progress-bar bg-danger' role='progressbar' style='width: $remainyesterday%' aria-valuenow='$remainyesterday' aria-valuemin='0' aria-valuemax='100'></div>
-                  </div>";
-                }
-
-                 ?>
+             
 
 
                  

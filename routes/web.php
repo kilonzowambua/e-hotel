@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 Route::get('/rooms', function () {
     return view('rooms');
 });
@@ -39,11 +42,12 @@ Route::get('/register','pagescontroller@register');
 
 
 Auth::routes();
-
-
-
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/create', 'clientController@create')->name('create');
+Route::get('/staffdashboard', 'staffController@staffdashboard')->name('staffdashboard');
+Route::get('/staff/login','Auth\Staff\LoginController@staffloginform')->name('staff.login');
+Route::post('/stafflogin','Auth\Staff\LoginController@stafflogin')->name('stafflogin');
+
+/*Route::get('/create', 'clientController@create')->name('create');
 Route::post('/storeclient', 'clientController@storeclient')->name('storeclient');
 Route::get('/manageclients', 'clientController@manageclients')->name('manageclients');
 Route::get('/viewsingleclient/{clientid}', 'clientController@viewsingleclient')->name('viewsingleclient');
@@ -55,19 +59,18 @@ Route::get('/status/{clientid}', 'clientController@status')->name('status');
 Route::post('/controlstatus/{clientid}', 'clientController@controlstatus')->name('controlstatus');
 Route::get('/home', 'clientController@countclients')->name('countclients');
 //staff route
-Route::get('/createstaff','staffController@createstaff')->name('createstaff');
-Route::post('/storestaff','staffController@storestaff')->name('storestaff');
+Route::get('/createstaff','HomeController@createstaff')->name('createstaff');
+Route::post('/storestaff','HomeController@storestaff')->name('storestaff');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/managestaffs', 'staffController@managestaffs')->name('managestaffs');
-Route::get('/viewsinglestaff/{staffid}', 'staffController@viewsinglestaff')->name('viewsinglestaff');
-Route::get('/showstaff/{staffid}', 'staffController@showstaff')->name('showstaff');
-Route::post('/editsinglestaff/{staffid}', 'staffController@editsinglestaff')->name('editsinglestaff');
-Route::get('/removestaff/{staffid}', 'staffController@removestaff')->name('removestaff');
-Route::post('/deletestaff/{staffid}', 'staffController@deletestaff')->name('deletestaff');
-Route::get('/staffstatus/{staffid}', 'staffController@staffstatus')->name('staffstatus');
-Route::post('/controlstaff/{staffid}', 'staffController@controlstaff')->name('controlstaff');
-//food(dish)
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/managestaffs', 'HomeController@managestaffs')->name('managestaffs');
+Route::get('/viewsinglestaff/{staffid}', 'HomeController@viewsinglestaff')->name('viewsinglestaff');
+Route::get('/showstaff/{staffid}', 'HomeController@showstaff')->name('showstaff');
+Route::post('/editsinglestaff/{staffid}', 'HomeController@editsinglestaff')->name('editsinglestaff');
+Route::get('/removestaff/{staffid}', 'HomeController@removestaff')->name('removestaff');
+Route::post('/deletestaff/{staffid}', 'HomeController@deletestaff')->name('deletestaff');
+Route::get('/staffstatus/{staffid}', 'HomeController@staffstatus')->name('staffstatus');
+Route::post('/controlstaff/{staffid}', 'HomeController@controlstaff')->name('controlstaff');
+
 Route::get('/createfood','foodController@createfood')->name('createfood');
 Route::post('/storedish','foodController@storedish')->name('storedish');
 Route::get('/managedish', 'foodController@managedish')->name('managedish');
@@ -76,7 +79,7 @@ Route::get('/viewsingledish/{foodid}', 'foodController@viewsingledish')->name('v
 Route::post('/editsingledish/{foodid}', 'foodController@editsingledish')->name('editsingledish');
 Route::get('/deletedish/{foodid}', 'foodController@deletedish')->name('deletedish');
 //room
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/createroom','roomController@createroom')->name('createroom');
 Route::post('/storeroom','roomController@storeroom')->name('storeroom');
 Route::get('/managerooms', 'roomController@managerooms')->name('managerooms');
@@ -113,15 +116,13 @@ Route::get('/removedish/{foodid}/{clientid}', 'foodController@removedish')->name
 Route::get('/vieworder', 'foodController@vieworder')->name('vieworder');
 
 Route::get('/controlorder/{clientid}','foodController@controlorder')->name('controlorder');
-Route::get('/manageorder/{clientid}', 'foodController@manageorder')->name('manageorder');
+Route::get('/manageorder/{clientid}', 'foodController@manageorder')->name('manageorder');*/
 
 //staff dashboard
-Route::group(['middleware' => ['web']], function () {
-Route::get('/staff/login','Auth\Staff\LoginController@staffloginform');
-Route::post('/stafflogin','Auth\Staff\LoginController@stafflogin')->name('stafflogin');
-Route::get('/staffdashboard', 'staffController@staffdashboard')->name('staffdashboard');
+
+
 //food
-Route::get('/Add meal','staffController@createfood')->name('createfood');
+/*Route::get('/Add meal','staffController@createfood')->name('createfood');
 Route::post('/storemeal','staffController@storedish')->name('storedish');
 Route::get('/Our menu', 'staffController@staffmenu')->name('menu');
 Route::get('/Our breakfast', 'staffController@staffbreakfast')->name('breakfast');
@@ -139,9 +140,9 @@ Route::get('/controloperation/{roomid}', 'roomController@controloperation')->nam
 Route::post('/editsingleroom/{roomid}', 'roomController@editsingleroom')->name('editsingleroom');
 Route::get('/all order', 'staffController@manageorder')->name('manageorder');
 Route::get('/controlorder/{clientid}','staffController@controlorder')->name('controlorder');
-Route::get('/Order/{clientid}', 'staffController@vieworder')->name('vieworder');
+Route::get('/Order/{clientid}', 'staffController@vieworder')->name('vieworder');*/
 
-});  
+ 
 
 
 

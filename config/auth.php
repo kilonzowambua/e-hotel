@@ -40,18 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-     'user' => [
-            'driver' => 'session',
-            'provider' => 'users'
-        ],
-        'staff' => [
-            'driver' => 'session',
-            'provider' => 'staffs',
-        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
-            'hash' => false,
+        ],
+        'staffs' => [
+            'driver' => 'session',
+            'provider' => 'staffs',
         ],
     ],
 
@@ -109,11 +105,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'staff' => [
+        'staffs' => [
             'provider' => 'staffs',
             'table' => 'password_resets',
             'expire' => 60,
-        ], 
+        ],
     ],
 
 ];
