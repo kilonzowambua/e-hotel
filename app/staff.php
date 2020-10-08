@@ -10,7 +10,7 @@ class staff extends Authenticatable
 {
     use Notifiable;
 
-    protected $guard = 'staff';
+    protected $guard = 'staffs';
 
     /**
      * The attributes that are mass assignable.

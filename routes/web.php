@@ -47,7 +47,7 @@ Route::get('/staffdashboard', 'staffController@staffdashboard')->name('staffdash
 Route::get('/staff/login','Auth\Staff\LoginController@staffloginform')->name('staff.login');
 Route::post('/stafflogin','Auth\Staff\LoginController@stafflogin')->name('stafflogin');
 
-/*Route::get('/create', 'clientController@create')->name('create');
+Route::get('/create', 'clientController@create')->name('create');
 Route::post('/storeclient', 'clientController@storeclient')->name('storeclient');
 Route::get('/manageclients', 'clientController@manageclients')->name('manageclients');
 Route::get('/viewsingleclient/{clientid}', 'clientController@viewsingleclient')->name('viewsingleclient');
@@ -116,13 +116,13 @@ Route::get('/removedish/{foodid}/{clientid}', 'foodController@removedish')->name
 Route::get('/vieworder', 'foodController@vieworder')->name('vieworder');
 
 Route::get('/controlorder/{clientid}','foodController@controlorder')->name('controlorder');
-Route::get('/manageorder/{clientid}', 'foodController@manageorder')->name('manageorder');*/
+Route::get('/manageorder/{clientid}', 'foodController@manageorder')->name('manageorder');
 
 //staff dashboard
 
 
 //food
-/*Route::get('/Add meal','staffController@createfood')->name('createfood');
+Route::get('/Add meal','staffController@createfood')->name('createfood');
 Route::post('/storemeal','staffController@storedish')->name('storedish');
 Route::get('/Our menu', 'staffController@staffmenu')->name('menu');
 Route::get('/Our breakfast', 'staffController@staffbreakfast')->name('breakfast');
@@ -140,7 +140,7 @@ Route::get('/controloperation/{roomid}', 'roomController@controloperation')->nam
 Route::post('/editsingleroom/{roomid}', 'roomController@editsingleroom')->name('editsingleroom');
 Route::get('/all order', 'staffController@manageorder')->name('manageorder');
 Route::get('/controlorder/{clientid}','staffController@controlorder')->name('controlorder');
-Route::get('/Order/{clientid}', 'staffController@vieworder')->name('vieworder');*/
+Route::get('/Order/{clientid}', 'staffController@vieworder')->name('vieworder');
 
  
 

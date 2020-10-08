@@ -45,9 +45,9 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
-        'staffs' => [
+        'staff' => [
             'driver' => 'session',
-            'provider' => 'staffs',
+            'provider' => 'staff',
         ],
     ],
 
@@ -73,7 +73,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-        'staffs' => [
+        'staff' => [
             'driver' => 'eloquent',
             'model' => App\staff::class,
         ],
@@ -105,8 +105,8 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'staffs' => [
-            'provider' => 'staffs',
+        'staff' => [
+            'provider' => 'staff',
             'table' => 'password_resets',
             'expire' => 60,
         ],
