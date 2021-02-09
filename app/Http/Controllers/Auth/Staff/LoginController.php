@@ -1,19 +1,24 @@
 <?php
 
 namespace App\Http\Controllers\Auth\Staff;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Auth;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 //use Route;
 
 class LoginController extends Controller
 {
-   
+  use AuthenticatesUsers;
+
   public function __construct()
     {
         //defining our middleware for this controller
         $this->middleware('guest:staff',['except' => ['logout']]);
     } 
+
  public function  staffloginform(){
         return view('staff.login');
     }
@@ -35,8 +40,11 @@ class LoginController extends Controller
     
     return redirect()->back()->withInput($request->only('email', 'remember'))->with('error', 'Please provide correct credentials');
   }
-
+  protected function guard()
+  {
+      return Auth::guard('staff');
+  }
 }  
 
-   
+
  

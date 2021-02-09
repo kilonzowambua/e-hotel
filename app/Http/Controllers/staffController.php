@@ -16,8 +16,7 @@ class staffController extends Controller
    
     public function __construct()
     {
-        //defining our middleware for this controller
-        $this->middleware('guest:staff',['except' => ['logout']]);
+        $this->middleware('auth:staff');
     }
    
  

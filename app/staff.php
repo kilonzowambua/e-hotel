@@ -2,15 +2,18 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use App\Notifications\ResetPasswordNotification;
+use App\Notifications\VerifyEmailNotification;
 
-
-class staff extends Authenticatable
+class staff  extends Authenticatable implements MustVerifyEmail
 {
+
     use Notifiable;
 
-    protected $guard = 'staffs';
+   
 
     /**
      * The attributes that are mass assignable.
